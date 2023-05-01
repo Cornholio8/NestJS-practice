@@ -1,6 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { db, Order } from './../db';
-import { v4 as uuidv4 } from 'uuid';
+import { Order } from '@prisma/client';
 import { PrismaService } from 'src/shared/services/prisma.service';
 
 @Injectable()

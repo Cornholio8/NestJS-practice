@@ -22,7 +22,7 @@ model Product {
 
 model Order {
   id String  @id @default(uuid())
-  productId String
+  productId Product @relation(fields: [productId], references: [id])
   client String
   address String
 
