@@ -1,16 +1,13 @@
-import { Transform } from 'class-transformer';
-import { IsNotEmpty, Length, Min } from 'class-validator';
+/* eslint-disable prettier/prettier */
+//import { Transform } from 'class-transformer';
+import { IsNotEmpty, IsUUID } from 'class-validator';
 
 export class UpdateOrderDTO {
   @IsNotEmpty()
-  @Min(0)
+  //@Min(0)
+  @IsUUID()
   productId: string;
 
-  @IsNotEmpty()
-  @Length(5, 30)
-  client: string;
-
-  @IsNotEmpty()
-  @Transform(({ value }) => (Array.isArray(value) ? value.join(', ') : ''))
-  address: string;
+  @IsUUID()
+  clientId: string;
 }

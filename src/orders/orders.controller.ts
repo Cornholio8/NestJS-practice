@@ -38,7 +38,7 @@ export class OrdersController {
   }
 
   @Post('/')
-  create(@Body() orderData: CreateOrderDTO) {
+  public create(@Body() orderData: CreateOrderDTO) {
     return this.ordersService.create(orderData);
   }
 
